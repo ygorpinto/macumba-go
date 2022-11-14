@@ -6,33 +6,38 @@ import { Entidade } from '../models/entidade.interface';
 
 @Injectable()
 export class EntidadeService {
-    constructor(
-        @InjectRepository(EntidadeEntity)
-        private readonly EntidadeEntityRepository: Repository<Entidade>
-    ) {}
+  constructor(
+    @InjectRepository(EntidadeEntity)
+    private readonly EntidadeEntityRepository: Repository<Entidade>,
+  ) {}
 
-    async getAll() {
-        const entidadees = await this.EntidadeEntityRepository.find();
-        return entidadees;
-    }
+  async getAll() {
+    const entidadees = await this.EntidadeEntityRepository.find();
+    return entidadees;
+  }
 
-    async getOne(id:number) {
-        const entidades = await this.EntidadeEntityRepository.findOneBy({id:id});
-        return entidades;
-    }
+  async getOne(id: number) {
+    const entidades = await this.EntidadeEntityRepository.findOneBy({ id: id });
+    return entidades;
+  }
 
-    async create(entidade:Entidade) {
-        const entidadeToSave = await this.EntidadeEntityRepository.save(entidade);
-        return entidadeToSave;
-    }
+  async create(entidade: Entidade) {
+    const entidadeToSave = await this.EntidadeEntityRepository.save(entidade);
+    return entidadeToSave;
+  }
 
-    async update(id:number, entidade:Entidade) {
-        const entidadeToUpdate = await this.EntidadeEntityRepository.update({id:id},entidade);
-        return entidadeToUpdate;
-    }
+  async update(id: number, entidade: Entidade) {
+    const entidadeToUpdate = await this.EntidadeEntityRepository.update(
+      { id: id },
+      entidade,
+    );
+    return entidadeToUpdate;
+  }
 
-    async delete(id:number) {
-        const entidadeToDelete = await this.EntidadeEntityRepository.delete({id:id});
-        return entidadeToDelete;
-    }
+  async delete(id: number) {
+    const entidadeToDelete = await this.EntidadeEntityRepository.delete({
+      id: id,
+    });
+    return entidadeToDelete;
+  }
 }

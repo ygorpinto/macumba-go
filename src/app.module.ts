@@ -83,7 +83,7 @@ import { DataSource } from 'typeorm';
     ForgotModule,
     MailModule,
     HomeModule,
-    EntidadeModule
+    EntidadeModule,
   ],
 })
 export class AppModule {}

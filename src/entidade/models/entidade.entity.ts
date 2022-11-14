@@ -4,7 +4,7 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 export class EntidadeEntity {
   @PrimaryGeneratedColumn()
   id: number;
-  
+
   @Column({ length: 500 })
   name: string;
 
@@ -14,7 +14,6 @@ export class EntidadeEntity {
   @Column('int')
   countDifficulty: number;
 
-  @Column({type:'timestamp', default: () => 'CURRENT_TIMESTAMP'})
+  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
-
 }

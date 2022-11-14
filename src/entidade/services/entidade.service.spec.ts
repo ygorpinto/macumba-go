@@ -6,19 +6,20 @@ import { EntidadeService } from './entidade.service';
 describe('EntidadeService', () => {
   let service: EntidadeService;
 
-  let mock = {
+  const mock = {
     find: jest.fn(),
-    save: jest.fn()
-  }
+    save: jest.fn(),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [EntidadeService,
-      {
-        provide: getRepositoryToken(EntidadeEntity),
-        useValue: mock
-      }
-      ]
+      providers: [
+        EntidadeService,
+        {
+          provide: getRepositoryToken(EntidadeEntity),
+          useValue: mock,
+        },
+      ],
     }).compile();
 
     service = module.get<EntidadeService>(EntidadeService);

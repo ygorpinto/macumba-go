@@ -3,5 +3,5 @@ export interface Entidade {
   name: string;
   difficulty: number;
   countDifficulty: number;
-  createdAt: Date
+  createdAt: Date;
 }
