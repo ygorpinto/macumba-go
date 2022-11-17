@@ -26,8 +26,8 @@ import { MailConfigService } from './mail/mail-config.service';
 import { ForgotModule } from './forgot/forgot.module';
 import { MailModule } from './mail/mail.module';
 import { HomeModule } from './home/home.module';
-import { EntidadeModule } from './entidade/entidade.module';
 import { DataSource } from 'typeorm';
+import { EntidadesModule } from './entidades/entidades.module';
 
 @Module({
   imports: [
@@ -83,7 +83,7 @@ import { DataSource } from 'typeorm';
     ForgotModule,
     MailModule,
     HomeModule,
-    EntidadeModule,
+    EntidadesModule,
   ],
 })
 export class AppModule {}
