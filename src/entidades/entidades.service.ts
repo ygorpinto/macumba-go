@@ -1,16 +1,23 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateEntidadeDto } from './dto/create-entidade.dto';
 import { UpdateEntidadeDto } from './dto/update-entidade.dto';
+import { Entidade } from './entities/entidade.entity';
 
 @Injectable()
 export class EntidadesService {
+  constructor(
+    @InjectRepository(Entidade)
+    private entidadeRepository: Repository<Entidade>,
+  ) {}
   create(createEntidadeDto: CreateEntidadeDto) {
     console.log(createEntidadeDto);
-    return 'This action adds a new entidade';
+    
   }
 
   findAll() {
-    return `This action returns all entidades`;
+    return this.entidadeRepository.find({});
   }
 
   findOne(id: number) {

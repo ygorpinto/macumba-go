@@ -17,7 +17,6 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('entidades')
 export class EntidadesController {
   constructor(private readonly entidadesService: EntidadesService) {}
-  
   @Version('1')
   @Post()
   create(@Body() createEntidadeDto: CreateEntidadeDto) {

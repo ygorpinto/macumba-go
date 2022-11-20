@@ -83,7 +83,7 @@ import { EntidadesModule } from './entidades/entidades.module';
     ForgotModule,
     MailModule,
     HomeModule,
-    EntidadesModule,
+    EntidadesModule
   ],
 })
 export class AppModule {}

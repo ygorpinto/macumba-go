@@ -1,1 +1,19 @@
-export class Entidade {}
+import { EntityHelper } from "src/utils/entity-helper";
+import { Column, CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+
+export class Entidade extends EntityHelper {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({ unique: true, nullable: true })
+  name: string | null;
+
+  @Column({ nullable: true })
+  difficulty: string;
+
+  @Column({ nullable: true })
+  countDifficulty: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
+}
