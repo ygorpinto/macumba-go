@@ -13,7 +13,6 @@ export class EntidadesService {
   ) {}
   create(createEntidadeDto: CreateEntidadeDto) {
     console.log(createEntidadeDto);
-    
   }
 
   findAll() {

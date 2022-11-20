@@ -1,5 +1,5 @@
-import { EntityHelper } from "src/utils/entity-helper";
-import { Column, CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import { EntityHelper } from 'src/utils/entity-helper';
+import { Column, CreateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
 
 export class Entidade extends EntityHelper {
   @PrimaryGeneratedColumn()
