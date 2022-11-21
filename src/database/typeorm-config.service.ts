@@ -1,13 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
+import { Entidade } from 'src/entidades/entities/entidade.entity';
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   constructor(private configService: ConfigService) {}
 
   createTypeOrmOptions(): TypeOrmModuleOptions {
-    console.log(__dirname + '/entities/*.js');
+    console.log(__dirname + '/entities/*.entity.{js,ts}');
     return {
       type: this.configService.get('database.type'),
       url: this.configService.get('database.url'),
@@ -20,7 +21,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       dropSchema: false,
       keepConnectionAlive: true,
       logging: this.configService.get('app.nodeEnv') !== 'production',
-      entities: [__dirname + '/../**/*.entity.{js,ts}'],
+      entities: [Entidade],
       migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
       cli: {
         entitiesDir: 'src',

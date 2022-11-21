@@ -1,6 +1,7 @@
 import { EntityHelper } from 'src/utils/entity-helper';
-import { Column, CreateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
+@Entity()
 export class Entidade extends EntityHelper {
   @PrimaryGeneratedColumn()
   id: number;
